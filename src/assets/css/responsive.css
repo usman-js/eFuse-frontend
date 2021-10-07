@@ -1,0 +1,35 @@
+@media (max-width:1199px){}
+@media (max-width:991px){}
+@media (max-width:800px){}
+@media (max-width:767px){
+	.at-dropdowarrow{display: block;}
+	.at-nav{
+		width: auto;
+		float: right;
+	}
+	.at-navigation{
+		top: 100%;
+		left: 0;
+		background: #fff;
+		position: absolute;
+	}
+	.at-navigation ul{}
+	.at-navigation ul li{
+		width: 100%;
+		float: left;
+		display: block;
+	}
+	.sub-menu,
+	.mega-menu{
+		clear: both;
+		float: left;
+		display: none;
+		position: static;
+		width: 100% !important;
+	}
+}
+@media (max-width:640px){}
+@media (max-width:568px){}
+@media (max-width:480px){}
+@media (max-width:479px){}
+@media (max-width:320px){}
