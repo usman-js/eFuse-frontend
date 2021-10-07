@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { icons } from "../../../assets/icons";
 import { IFeed } from "../interface/feed.interface";
 interface IProps {
   feed: IFeed;

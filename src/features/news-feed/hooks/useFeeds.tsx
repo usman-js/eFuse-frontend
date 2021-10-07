@@ -1,6 +1,5 @@
 import { useState } from "react";
 import Swal from "sweetalert2";
-import { idText } from "typescript";
 import { Toast } from "../../../helpers/toast.helper";
 import { uuidGenerator } from "../../../helpers/uuid-generator.helper";
 import { user } from "../data/user";

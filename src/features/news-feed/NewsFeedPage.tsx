@@ -1,9 +1,10 @@
 import React from "react";
-import { icons } from "../../assets/icons";
+import { CommentComponent } from "./components/CommentComponent";
+import { CreateCommentComponent } from "./components/CreateCommentComponent";
 import { CreateFeedComponent } from "./components/CreateFeedComponent";
 import { FeedComponent } from "./components/FeedComponent";
-import { user } from "./data/user";
 import { useFeeds } from "./hooks/useFeeds";
+import { IComment } from "./interface/comment.interface";
 import { IFeed } from "./interface/feed.interface";
 
 export const NewsFeedPage: React.FC = () => {
@@ -29,7 +30,20 @@ export const NewsFeedPage: React.FC = () => {
               addCommentLikeHandler={addCommentLikeHandler}
               addCommentHandler={addCommentHandler}
               removeCommentHandler={removeCommentHandler}
-            />
+            >
+              <CreateCommentComponent
+                feed={feed}
+                addCommentHandler={addCommentHandler}
+              />
+              {feed.comments.map((comment: IComment) => (
+                <CommentComponent
+                  key={comment._id}
+                  comment={comment}
+                  removeCommentHandler={removeCommentHandler}
+                  addCommentLikeHandler={addCommentLikeHandler}
+                />
+              ))}
+            </FeedComponent>
           ))}
         </div>
       </div>

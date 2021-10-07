@@ -3,10 +3,7 @@ import React, { useState } from "react";
 import { icons } from "../../../assets/icons";
 import { user } from "../data/user";
 import { useFeeds } from "../hooks/useFeeds";
-import { IComment } from "../interface/comment.interface";
 import { IFeed } from "../interface/feed.interface";
-import { CommentComponent } from "./CommentComponent";
-import { CreateCommentComponent } from "./CreateCommentComponent";
 interface IProps {
   feed: IFeed;
   addFeedLikeHandler: Function;
@@ -18,9 +15,7 @@ interface IProps {
 export const FeedComponent: React.FC<IProps> = ({
   feed,
   addFeedLikeHandler,
-  addCommentHandler,
-  addCommentLikeHandler,
-  removeCommentHandler,
+  children,
 }) => {
   const { focusOnCommentInputHandler } = useFeeds();
   const [showCommentSection, setShowCommentSection] = useState<boolean>(false);
@@ -82,22 +77,7 @@ export const FeedComponent: React.FC<IProps> = ({
               </button>
             </li>
           </ul>
-          {showCommentSection && (
-            <>
-              <CreateCommentComponent
-                feed={feed}
-                addCommentHandler={addCommentHandler}
-              />
-              {feed.comments.map((comment: IComment) => (
-                <CommentComponent
-                  key={comment._id}
-                  comment={comment}
-                  removeCommentHandler={removeCommentHandler}
-                  addCommentLikeHandler={addCommentLikeHandler}
-                />
-              ))}
-            </>
-          )}
+          {showCommentSection && <>{children}</>}
         </div>
       </div>
     </div>
