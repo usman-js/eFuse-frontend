@@ -64,13 +64,13 @@ export const FeedComponent: React.FC<IProps> = ({
         <div className="uk-postcommentsarea">
           <ul className="uk-postmetadata">
             <li>
-              <button onClick={() => addFeedLikeHandler(feed._id, user._id)}>
+              <button data-testid="feedLike" onClick={() => addFeedLikeHandler(feed._id, user._id)}>
                 <img src={icons.like} alt="Like Icon" />
                 <span>Likes</span>
               </button>
             </li>
             <li>
-              <button onClick={() => commentSectionHandler()}>
+              <button data-testid="feedComment" onClick={() => commentSectionHandler()}>
                 <img src={icons.messenger} alt="Message Icon" />
                 <span>Comments</span>
               </button>
