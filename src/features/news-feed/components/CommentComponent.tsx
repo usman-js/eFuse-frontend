@@ -45,12 +45,7 @@ export const CommentComponent: React.FC<IProps> = ({
               <span>Like</span>
             </button>
           </li>
-          {/* <li>
-            <button>
-              <img src={icons.pencil} alt="Edit Icon" />
-              <span>Edit</span>
-            </button>
-          </li> */}
+         
           <li>
             <button
               onClick={() => removeCommentHandler(comment.feed, comment._id)}
