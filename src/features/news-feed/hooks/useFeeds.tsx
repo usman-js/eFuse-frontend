@@ -15,7 +15,7 @@ export const useFeeds = () => {
   };
 
   const createFeedHandler = (content: string) => {
-    if (content == "")
+    if (content === "")
       Toast.fire({
         title: "Cannot post a feed without content.",
         icon: "warning",
@@ -81,7 +81,7 @@ export const useFeeds = () => {
     feedId: string;
     content: string;
   }) => {
-    if (content == "")
+    if (content === "")
       Toast.fire({
         title: "Cannot post a comment without content.",
         icon: "warning",
