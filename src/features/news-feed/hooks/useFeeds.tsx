@@ -9,11 +9,6 @@ import { IFeed } from "../interface/feed.interface";
 export const useFeeds = () => {
   const [feeds, setFeeds] = useState<IFeed[]>([]);
 
-  const focusOnCommentInputHandler = (inputId: string) => {
-    const el = document.getElementById(inputId);
-    if (el) el.focus();
-  };
-
   const createFeedHandler = (content: string) => {
     if (content === "")
       Toast.fire({
@@ -133,7 +128,6 @@ export const useFeeds = () => {
   return {
     feeds,
     createFeedHandler,
-    focusOnCommentInputHandler,
     addFeedLikeHandler,
     addCommentHandler,
     addCommentLikeHandler,

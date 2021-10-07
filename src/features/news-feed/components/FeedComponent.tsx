@@ -1,8 +1,8 @@
 import moment from "moment";
 import React, { useState } from "react";
 import { icons } from "../../../assets/icons";
+import { focusOnElementHandler } from "../../../helpers/focus.helper";
 import { user } from "../data/user";
-import { useFeeds } from "../hooks/useFeeds";
 import { IFeed } from "../interface/feed.interface";
 interface IProps {
   feed: IFeed;
@@ -17,13 +17,12 @@ export const FeedComponent: React.FC<IProps> = ({
   addFeedLikeHandler,
   children,
 }) => {
-  const { focusOnCommentInputHandler } = useFeeds();
   const [showCommentSection, setShowCommentSection] = useState<boolean>(false);
 
   const commentSectionHandler = () => {
     setShowCommentSection((section) => !section);
     setTimeout(() => {
-      focusOnCommentInputHandler(`${feed._id}-comment`);
+      focusOnElementHandler(`${feed._id}-comment`);
     }, 250);
   };
   return (
